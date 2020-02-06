@@ -13,10 +13,13 @@ public class OfflineExercises {
 	// multChar("Hi-There") → "HHHiii---TTThhheeerrreee"
 
 	public String multChar(String input) {
-		String[] chars = input.split(null);
-		chars.clone();
-
-		return "";
+		String output = "";
+		for(String splitter:input.split("")) {
+			for(int i=0;i!=3;i++) {
+				output=(output+splitter);
+			}
+		}
+		return output;
 	}
 
 	// Return the string (backwards) that is between the first and last appearance
@@ -105,13 +108,13 @@ public class OfflineExercises {
 	// nMid("Chocolate", 1) → "Choclate"
 
 	public String nMid(String input, int a) {
-		int length = input.length();
-		double middle = Math.ceil(length / 2);
-		input.toCharArray();
+		
+		int length=input.length()-a;
+		int end=length/2;
+		String output="";
+		output = input.substring(0,end)+input.substring(input.length()-end,input.length());
+		return output;
 
-		// System.out.println(input.substring(0,length-a)+input.substring(length-a,length));
-
-		return "";
 	}
 
 	// Given a string, return true if it ends in "dev". Ignore Case
